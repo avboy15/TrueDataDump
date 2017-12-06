@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <title>DataDump -Two Dimensional Arrays</title> 
+     <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+	 <script src = "testScript.js"></script>
+
+ </head>
+ <body onload = "transform('560','860','square10');transform('620','860','square11'); transform('560','920','square12');transform('620','920','square13');transform('-20','20','tab5');transform('0','3080','left2')">
+   <center><h1 class = "round">Two Dimensional Arrays</h1></center>
+   <br>
+   <p class = "norm">In its simplest form, a 2D Array is an Array that holds Arrays. It sounds complex, but it is pretty useful and versatile. 2D Arrays share all the characteristics and methods of single dimension arrays. 
+</p>
+     <center><p class = "round2">Intialization</p></center>
+	 <p class = "norm">There is no importation for Arrays.
+</p>
+    <p class = "norm">The initialization of a 2D Array looks like this
+</p>
+<br>
+     <center><p class = "code">int<a id = "meghanaLink">[]</a><a id = "shriyaLink">[]</a> exampleArray = {{1,2},{3,4}};
+</p></center>
+     <center><p class = "norm">and
+</p></center>
+     <center><p class = "code">Int [][] exampleArray = new int[][]{{1,2},{3,4}};
+</p></center>
+     <center><p class = "norm">Or like this
+</p></center>
+     <center><p class = "code">Int[][] exampleArray = new int[2][2];  (This creates an empty array with the given dimensions)
+</p></center>
+<br>
+     <p class = "norm">To make this simple, think of 2D arrays as a table of values, with the <a class = "red" onmouseover = "highlight('meghanaLink')" onmouseout = "unhighlight('meghanaLink')">first []</a> representing rows and the <a class = "red" onmouseover = "highlight('shriyaLink')" onmouseout = "unhighlight('shriyaLink')">second []</a> representing columns. The exampleArray with values would look like this
+</p>
+<br>
+     <div class = "square" id = "square10">1</div>
+     <div class = "square" id = "square11">2</div>
+     <div class = "square" id = "square12">3</div> 
+     <div class = "square" id = "square13">4</div> 	 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+	 <p class = "norm">So if we wanted to call the element number 3, whether to change it or print it out, we would do this
+</p>
+<br>
+     <center><p class = "code">exampleArray [1][0];
+</p></center>
+<br>
+     <p class = "norm">By adding another [] when we are creating the array, we can make a 3D Array and so on. However, as we add more dimensions to Arrays, they become more and more complex to work with.
+</p>
+
+     <center><p class = "round2">Iteration</p></center>
+	 
+     <p class = "norm">This is similar to single dimensional arrays, but we will have to embed a for loop within a for loop, like this.
+</p>
+  <br>
+	<p class = "code"><a id = "shreeLink">for</a>(<a id = "deeptiLink">int i = 0; i < exampleArray.length; i++</a>)</p>
+    <p class = "code">{</p>
+    <p class = "tab"><a id = "neetiLink">for</a>(int y = 0; <a id = "hareemLink">y < exampleArray[i].length;</a> y++)</p>
+	<p class = "tab">{</p>
+	<p class = "doubletab">//code</p>
+	<p class = "tab">}</p>
+    <p class = "code">}</p>
+	<br>
+	<p class = "norm">The <a class = "red" onmouseover = "highlight('shreeLink')" onmouseout = "unhighlight('shreeLink')">outermost for loop</a> iterates through <a class = "red" onmouseover = "highlight('deeptiLink')" onmouseout = "unhighlight('deeptiLink')">each separate Array in the 2D Array</a>, while the <a class = "red" onmouseover = "highlight('neetiLink')" onmouseout = "unhighlight('neetiLink')">inner for loop</a> looks at the individual elements in the current Array that the outer loop is looking at. We put <a class = "red" onmouseover = "highlight('hareemLink')" onmouseout = "unhighlight('hareemLink')">y < exampleArray[i].length</a> as a parameter in the second for loop because it tells the computer to look at every element at whatever Array the outer loop is currently on. However, we could have also put y < exampleArray[0].length, because Arrays have to be rectangular, so the length of one of the arrays is the length of all of them.
+</p>
+
+    <p class = "norm">We can also use a for-each loop, like this
+</p>
+<br>
+	<p class = "code">for(<a id = "lamiaLink">int[] y</a> : <a id = "ihikaLink">exampleArray</a>)</p>
+    <p class = "code">{</p>
+    <p class = "tab">for(int a : y)</p>
+	<p class = "tab">{</p>
+	<p class = "doubletab">//code</p>
+	<p class = "tab">}</p>
+    <p class = "code">}</p>    
+<br>
+     <p class = "norm">The outer loop's parameter looks at <a class = "red" onmouseover = "highlight('lamiaLink')" onmouseout = "unhighlight('lamiaLink')">every individual Array 'y'</a> in the <a class = "red" onmouseover = "highlight('ihikaLink')" onmouseout = "unhighlight('ihikaLink')">exampleArray</a>, and we already know what the inner loop does.
+</p>	
+     <p class = "norm">We used int Arrays for all the example, but all of this could have been done with Arrays of any primitive or User made object. All we would have to do is replace the 'int' calls with the <a class = "red" onmouseover = "highlight('yashLink')" onmouseout = "unhighlight('yashLink')">object's name</a> and made the <a class = "red" onmouseover = "highlight('benLink')" onmouseout = "unhighlight('benLink')">input that object type</a>, as shown with string below
+</p>	
+<br>
+	 <center><p class = "code"><a id = "yashLink">String</a> [] stringArray = new String [2];
+</p></center>
+     <center><p class = "code">String [] stringArray = {<a id = "benLink">'hello','there'</a>};
+</p></center>
+<br>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.html">-Home</a>
+  <a href="1DArrays.html">-Single Arrays</a>
+  <a href="2DArrays.html">-Two Dimensional Arrays</a>
+  <a href="ArrayLists.html">-ArrayLists</a>
+  <a href="HashMap.html">-HashMaps</a>
+  <a href="ADT.html">-Abstract Data Type Introduction</a>
+  <a href="Stack.html">-Stacks</a>
+  <a href="Queue.html">-Queue</a>
+  <a href="BST.html">-Binary Search Trees</a>
+</div>
+<span onclick="openNav()" class = "square2" id = "tab5">---></span>
+   <a class = "green2" href = "1DArrays.html" id = "left2"><-----Single Arrays</a>
+   <a class="right" href="ArrayLists.html">ArrayLists-----></a>
+ </body>
+</html>

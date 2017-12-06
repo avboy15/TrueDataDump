@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <title>DataDump -Stacks</title> 
+     <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+	 <script src = "testScript.js"></script>
+
+ </head>
+ <body onload = "transform('535','2630','square47'); transform('595','2630','square48'); transform('655','2630','square49');transform('565','2785','square50'); transform('625','2785','square51');transform('-20','20','tab9');transform('0','2885','left6')">
+   <center><h1 class = "round">Stacks</h1></center>
+   <br>
+   <p class = "norm">Our first ADT is the Stack. The Stack is almost exactly what it sounds like. Imagine placing a deck of cards face down on a table, one by one. The first card that you put on the table will be the bottom of the stack. If you want to remove that card from the stack or see what it's value is, then you would have to take out every card on top of it one by one. Therefore, the first value added on the stack is always going to be the last one out (FILO). That being said, the last value put on the stack will be the first one out. Stacks are used in most internet browser, when you go to the previous page.Stacks are mutable.</p>
+   <center><p class = "round2">Initialization</p></center>
+   <p class = "norm">Remember to import java.util </p>
+   <p class = "norm">The initialization for the stack is once again very similar to that of an ArrayList
+</p>
+<br>
+<center><p class = "code">Stack < Object > myStack = new Stack< Object >();
+</p></center>
+<center><p class = "code">Stack < Object > myStack = new Stack<>();
+</p></center>
+<br>
+   <p class = "norm">You cannot initialize a stack with a set number of starting slots because it is an Abstract Data Type.</p>
+   <center><p class = "round2">Useful Methods</p></center>
+   <p class = "norm">The methods for Stack are very different from the methods that we have already seen, so it is an integral that you get a good understanding of them.
+</p>
+
+   <p class = "norm">.push(Object o) - This adds the Object o on the top of the stack.
+</p>
+   <p class = "norm">.pop() - This removes the top Object on the stack and returns it's value.
+</p>
+   <p class = "norm">.peek() - This returns the value of the top Object on the stack and does not alter the stack.
+</p>
+   <p class = "norm">.empty() - Checks if stack is empty.
+</p>
+   <p class = "norm">.search(Object o) - returns position of the Object o.
+</p>
+   <p class = "norm">more information can be found <a href= "https://docs.oracle.com/javase/7/docs/api/java/util/Stack.html">here</a>
+</p>
+   <center><p class = "round2">Iteration</p></center>
+   <p class = "norm">Iterating through Stacks is weird, since you cannot return a value unless it is on the top of the stack. Using the new methods we learned in the previous page (have link to useful methods), we can iterate through a stack with easy.
+</p>
+<br>
+   <p class = "code">whlie(<a id = "p">myStack.empty()</a>==false)</p>
+   <p class = "code">{</p>
+   <p class = "tab" id = "q">myStack.pop();</p>
+   <p class = "code">}</p>
+<br>
+   <p class = "norm">The while loop uses the <a class = "red" onmouseover = "highlight('p')" onmouseout = "unhighlight('p')">.empty()</a> method to check if the stack has elements in it. While the stack has elements, the <a class = "red" onmouseover = "highlight('q')" onmouseout = "unhighlight('q')">.pop()</a> methods returns the top element and gets rid of that element right after. When working with a Stack, be careful, as the only way to get to the next element is to pop the top element off. Alternatively, we could just <a class = "red" onmouseover = "highlight('r')" onmouseout = "unhighlight('r')">peek</a> at the top element and remove it later.  Like this.
+</p>
+<br>
+   <p class = "code">while(myStack.empty()==false)</p>
+   <p class = "code">{</p>
+   <p class = "tab" id = "r">myStack.peek();</p>
+   <p class = "tab">//code</p>
+   <p class = "tab">myStack.pop();</p>
+   <p class = "code">}</p>
+<br>
+   <p class = "norm">Below is a visualization of the Stack's pop and push methods, starting with an empty stack
+</p>
+<br>
+<center><p class = "code">{}</p></center>
+<center><p class = "code">stack.push(1);</p></center>
+<center><p class = "code">stack.push(2);</p></center>
+<center><p class = "code">stack.push(3);</p></center>
+<br>
+<br>
+<div class = "square" id = "square47">1</div>
+<div class = "square" id = "square48">2</div>
+<div class = "square" id = "square49">3</div>   
+<br>
+<br>
+<center><p class = "code">stack.pop();</p></center>
+<br>
+<br>
+<div class = "square" id = "square50">1</div>
+<div class = "square" id = "square51">2</div>
+<br>
+<br>
+<br>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.html">-Home</a>
+  <a href="1DArrays.html">-Single Arrays</a>
+  <a href="2DArrays.html">-Two Dimensional Arrays</a>
+  <a href="ArrayLists.html">-ArrayLists</a>
+  <a href="HashMap.html">-HashMaps</a>
+  <a href="ADT.html">-Abstract Data Type Introduction</a>
+  <a href="Stack.html">-Stacks</a>
+  <a href="Queue.html">-Queue</a>
+  <a href="BST.html">-Binary Search Trees</a>
+</div>
+<span onclick="openNav()" class = "square2" id = "tab9">---></span>
+   <a class = "green2" href = "ADT.html" id = "left6"><-----Abstract Data Type Introduction</a>
+   <a class="right" href="Queue.html">Queue-----></a>
+ </body>
+</html>

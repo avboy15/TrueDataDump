@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <title>DataDump -ArrayLists</title> 
+     <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+	 <script src = "testScript.js"></script>
+
+ </head>
+ <body onload = "transform('480','400','square14');transform('540','400','square15');transform('600','400','square16');transform('660','400','square17');transform('720','400','square18'); transform('330','560','square19'); transform('390','560','square20'); transform('450','560','square21'); transform('510','560','square22'); transform('570','560','square23'); transform('630','560','square24'); transform('690','560','square25'); transform('750','560','square26'); transform('810','560','square27'); transform('870','560','square28');transform('-20','20','tab6');transform('0','3200','left3')">
+   <center><h1 class = "round">ArrayLists</h1></center>
+   <br>
+   <p class = "norm">ArrayLists, or Lists, can hold objects and only objects. This means that they cannot hold primitives such as ints, strings, or boolean. If we wanted to fill our List with these sorts of primitives, we would have to use wrapper classes  which are classes that encapsulate normal primitives to make them usable. The wrapper object for int is Integer, string is String, and boolean is Boolean. They are simple in that all you have to do is capitalize the first word to wrap them.  ArrayLists are mutable, which means that you can add as many elements as you want. The List adjusts its size by adding twice as many slots when the user <a class = "red" onmouseover = "highlight('nehaLink')" onmouseout = "unhighlight('nehaLink')">adds an object</a> that exceeds the previous carrying capacity, as shown below.
+</p>
+<br>
+<center><p class = "code">List before adding new value</p></center>
+<br>
+<br>
+     <div class = "square" id = "square14">1</div>
+     <div class = "square" id = "square15">2</div>
+     <div class = "square" id = "square16">3</div> 
+     <div class = "square" id = "square17">4</div> 
+	 <div class = "square" id ="square18">5</div>
+<br>
+<br>
+     <center><p class = "code" id = "nehaLink">list.add(6);
+</p></center>
+     <center><p class = "code">list after adding new value
+</p></center>
+     <div class = "square" id = "square19">1</div>
+     <div class = "square" id = "square20">2</div>
+     <div class = "square" id = "square21">3</div> 
+     <div class = "square" id = "square22">4</div> 
+	 <div class = "square" id ="square23">5</div>
+	 <div class = "square" id = "square24">6</div>
+     <div class = "square" id = "square25">N</div>
+     <div class = "square" id = "square26">N</div> 
+     <div class = "square" id = "square27">N</div> 
+	 <div class = "square" id ="square28">N</div>
+     <br>
+	 <br>
+	 <br>
+     <center><p class = "round2">Intialization</p></center>
+     <p class = "norm">Remember to import java.util
+</p>
+     <p class = "norm">The ArrayList can be initialized in multiple ways, but they are all very similar to each other. Here are most of them.
+</p>
+<br>
+     <center><p class = "code">ArrayList <a id = "shoaibLink">< Object ></a> <a id = "paigeLink">list</a> = <a id = "saifLink">new ArrayList</a>< Object ><a id = "caitlynLink">()</a>;
+</p></center>
+     <center><p class = "code"><a id = "wooLink">List</a> < Object > list = new <a id = "avnerLink">ArrayList</a><a id = "kristenLink">< Object ></a>();
+</p></center>
+     <center><p class = "code">ArrayList < Object > list = new ArrayList<>();
+</p></center>
+     <center><p class = "code">List < Object > list = new ArrayList<>();
+</p></center>
+<br>
+   <p class = "norm">On these initializations, you will notice some common things amongst them all. On the left of the equal sign, we must always put the <a class = "red" onmouseover = "highlight('shoaibLink')" onmouseout = "unhighlight('shoaibLink')">object type in the <></a>, so in this case, it was Integer. We do this so the computer knows what type of object to put in the List  .We also must put our <a class = "red" onmouseover = "highlight('paigeLink')" onmouseout = "unhighlight('paigeLink')">object's name</a> right next to the <>, which in this case was list. We must also make sure to put the <a class = "red" onmouseover = "highlight('saifLink')" onmouseout = "unhighlight('saifLink')">'new ArrayList'</a> right after the equal sign, so the computer knows to make a new ArrayList. Finally, we must put the <a class = "red" onmouseover = "highlight('caitlynLink')" onmouseout = "unhighlight('caitlynLink')">parenthesis</a> at the end and a semicolon, as this calls to the class's constructor method. Now let's talk about the optional parts of the initialization. The first word in the initialization can be formatted as either <a class = "red" onmouseover = "highlight('wooLink')" onmouseout = "unhighlight('wooLink')">List</a> or ArrayList. The computer notices both of them as ArrayList, as long as the word <a class = "red" onmouseover = "highlight('avnerLink')" onmouseout = "unhighlight('avnerLink')">after the keyword 'new' is ArrayList</a>. Also, it is optional to <a class = "red" onmouseover = "highlight('kristenLink')" onmouseout = "unhighlight('kristenLink')">rewrite the object type that you are putting in the <> after the equal sign</a>.  Doing this sets up extra security parameters and ensures that the method does not get corrupted, but is by no means is this necessary. You can also have a <a class = "red" onmouseover = "highlight('raheelLink')" onmouseout = "unhighlight('raheelLink')">starting size</a> for your ArrayList by putting the desired size in the parenthesis, like this.
+</p>
+<br>
+     <center><p class = "code">ArrayList < Object > list = new ArrayList< Object ><a id = "raheelLink">(5)</a>;
+</p></center>
+<br>
+     <p class = "norm">You might ask, why is this necessary, as ArrayLists are immutable? Having a predetermined size makes the code run faster and makes the overall experience less cumbersome for the computer.
+</p>
+     <center><p class = "round2">Useful methods</p></center>
+     <p class = "norm">.add(Object x) = adds Object x at the end of the list
+</p>
+     <p class = "norm">.add(Object x, int y) = adds Object x at index y.
+</p>
+     <p class = "norm">.get(int x) = returns the object at index x.
+</p>
+     <p class = "norm">.indexOf(Object x) = returns index of Object x. 
+</p>
+     <p class = "norm">.remove(int x) = removes and returns Object at index x.
+</p>
+     <p class = "norm">.remove(Object o) = removes first instance of Object o.
+</p>
+     <p class = "norm">.contains(Object o) = returns true if list contains specified Object.
+</p>
+     <p class = "norm">.size() = returns the length of the ArrayList
+</p>
+     <p class = "norm">More intricate methods can be found in the following <a href = "https://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html">link</a> (insert link to API)
+</p>
+     <center><p class = "round2">Iteration</p></center>
+     <p class = "norm">ArrayLists can be iterated through like a normal Array, with a for or for-each loop.
+</p>
+<br>
+   <p class = "code">for(int i= 0; i < <a id = "ayushLink" >list.size();</a> i++)</p>
+   <p class = "code">{</p>
+   <p class = "tab">//code</p>
+   <p class = "code">}</p>
+ <br>
+    <p class = "norm">The noticeable difference here from the iteration of a normal Array is that we use <a class = "red" onmouseover = "highlight('ayushLink')" onmouseout = "unhighlight('ayushLink')">.size()</a> instead of .length. This is because ArrayList is a different class from the Array class. In the Array class, .length returns the instance variable that holds the length, and in the ArrayList class,  .size() is a call to a method that returns the length of the ArrayList.</p>
+     <p class = "norm">We can also use a for-each loop to iterate through this, as shown below. This is the exact same as the Array iteration.
+</p>
+<br>
+   <p class = "code">for(int a : list)</p>
+   <p class = "code">{</p>
+   <p class = "tab">//code</p>
+   <p class = "code">}</p>
+<br>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.html">-Home</a>
+  <a href="1DArrays.html">-Single Arrays</a>
+  <a href="2DArrays.html">-Two Dimensional Arrays</a>
+  <a href="ArrayLists.html">-ArrayLists</a>
+  <a href="HashMap.html">-HashMaps</a>
+  <a href="ADT.html">-Abstract Data Type Introduction</a>
+  <a href="Stack.html">-Stacks</a>
+  <a href="Queue.html">-Queue</a>
+  <a href="BST.html">-Binary Search Trees</a>
+</div>
+<span onclick="openNav()" id = "tab6" class = "square2">---></span>
+   <a class = "green2" href = "2DArrays.html" id = "left3"><-----Two Dimensional Arrays</a>
+   <a class="right" href="HashMap.html">HashMaps-----></a>
+ </body>
+</html>
+

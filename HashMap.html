@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <title>DataDump -HashMaps</title> 
+     <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+	 <script src = "testScript.js"></script>
+
+ </head>
+ <body onload = "transform('500','295','square29');transform('570','295','square30');transform('640','295','square31');transform('710','295','square32');transform('520','395','square33');transform('580','395','square34');transform('640','395','square35');transform('700','395','square36'); transformLine('540','370','0','0','28','HM1');transformLine('610','370','0','0','28','HM2');transformLine('670','370','0','0','28','HM3');transformLine('730','370','0','0','28','HM4');transform('-20','20','tab7');transform('0','2805','left4')">
+   <center><h1 class = "round">HashMaps</h1></center>
+      <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.html">-Home</a>
+  <a href="1DArrays.html">-Single Arrays</a>
+  <a href="2DArrays.html">-Two Dimensional Arrays</a>
+  <a href="ArrayLists.html">-ArrayLists</a>
+  <a href="HashMap.html">-HashMaps</a>
+  <a href="ADT.html">-Abstract Data Type Introduction</a>
+  <a href="Stack.html">-Stacks</a>
+  <a href="Queue.html">-Queue</a>
+  <a href="BST.html">-Binary Search Trees</a>
+</div>
+<span onclick="openNav()" class = "square2" id = "tab7">---></span>
+   <p class = "norm">The HashMap is a very unique dataset, in that it does not call or iterate through its value in numeric order. Instead, it uses <a class = "red" onmouseover = "highlight('susanaLink')" onmouseout = "unhighlight('susanaLink')" >'keys'</a> to call a <a class = "red" onmouseover = "highlight('alecLink')" onmouseout = "unhighlight('alecLink')">'value'</a>. A key is an object that the computer pairs with a certain value, so when we call the key, it returns a value. Like an ArrayList, it can only store objects in the key and value spots, so you may have to use some wrapper classes. HashMaps are also mutable, but can be initialized with a starting size to save time and space in the computer. If you wanted to create a HashMap that doesn't have repeats, then make a HashSet instead. Here is a visualization of the HashMap.
+</p>
+<br>
+     <div class = "squareText" id = "square29">"One"</div> 
+	 <div class = "squareText" id = "square30">"Two"</div>
+	 <div class = "squareText" id = "square31">"Three"</div>
+	 <div class = "squareText" id = "square32">"Four"</div>
+     <div class = "square" id = "square33">1</div>
+	 <div class = "square" id = "square34">2</div>
+	 <div class = "square" id = "square35">3</div>
+	 <div class = "square" id = "square36">4</div>
+	 <div class = "line2" id = "HM1"></div>
+	 <div class = "line2" id = "HM2"></div>
+	 <div class = "line2" id = "HM3"></div>
+	 <div class = "line2" id = "HM4"></div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<p class = "norm">So if we call the <a class = "red" onmouseover = "highlight('square31')" onmouseout = "unhighlight('square31')">'three'</a> key, the program will return the <a class = "red" onmouseover = "highlight('square35')" onmouseout = "unhighlight('square35')">value indexed at that key</a>, which in this case is 3</p>
+     <center><p class = "round2">Intialization</p></center>
+   <p class = "norm">Remember to import java.util
+</p>   
+   <p class = "norm">The initialization for the HashMap is very similar to the initialization for the ArrayList.
+</p>   
+<br>
+<center><p class = "code">HashMap < <a id = "kendallLink">String,Integer</a> > map = new HashMap< <a id = "luanaLink">String</a>,<a id = "spencerLink">Integer</a> >();
+</p></center>
+<center><p class = "code">HashMap < String,Integer > map = new HashMap<>();</p></center>
+<center><p class = "code">Map < String,Integer > map = new HashMap< String,Integer >();</p></center>
+<center><p class = "code">Map < String,Integer > map = new HashMap<>();</p></center>
+<center><p class = "code">HashMap < String,Integer > map = new HashMap<>(5);</p></center>
+<br>
+   <p class = "norm">As you can see, the HashMap is different in that instead of having a single data type in the <>, it has <a class = "red" onmouseover = "highlight('kendallLink')" onmouseout = "unhighlight('kendallLink')">two</a>. The first data type is the <a class = "red" onmouseover = "highlight('luanaLink')" onmouseout = "unhighlight('luanaLink')">key</a>, which in this case is a string, and the seconds data type is the <a class = "red" onmouseover = "highlight('spencerLink')" onmouseout = "unhighlight('spencerLink')">value</a>, which in this case is an Integer. Of course, you can make the key and value any combination of object type that you want, so don't feel limited to your possibilities.
+</p>   
+     <center><p class = "round2">Useful methods</p></center>
+     <p class = "norm">.get(Object key) - Key is a parameter, returns the value of the key.
+</p>
+     <p class = "norm">.put(K key, V value) - create a new key and value to place in your HashMap.
+</p>
+     <p class = "norm">.remove(Object key) - removes the key and the value , but also returns the value
+</p>
+     <p class = "norm">.containsKey(Object key) - checks if the HashMap contains this key.
+</p>
+     <p class = "norm">.containsValue(Object value) - checks if the HashMap contains this value.
+</p>
+     <p class = "norm">.size() - returns size of the HashMap.
+</p>
+     <p class = "norm">.getSet() - returns an iterable collection of keys in the hashmap
+</p>
+     <p class = "norm">.values() - returns an iterable collection of values in the hashmap
+</p>
+     <p class = "norm">More intricate methods can be found in the following <a href = "https://docs.oracle.com/javase/7/docs/api/java/util/HashMap.html">link</a> 
+</p>
+    <center><p class = "round2">Iteration</p></center>
+     <p class = "norm">Iteration through HashMaps are a little more complex than what we have covered so far, since we have to worry about both keys and values. We can iterate using three methods. First, we can iterate through the keys only.
+</p>	 
+<br>
+   <p class = "code">for(String key: <a id = "devanshiLink">list.getSet()</a>)</p>
+   <p class = "code">{</p>
+   <p class = "tab">//code</p>
+   <p class = "code">}</p>
+<br>
+     <p class = "norm">As mentioned in the 'useful methods' section, the <a class = "red" onmouseover = "highlight('devanshiLink')" onmouseout = "unhighlight('devanshiLink')">'getSet()'</a> method returns an iterable collection of all of the sets in the code. We can also iterate through the values exclusively, like this.
+</p>
+<br>
+   <p class = "code">for(int value: <a id = "rhiyaLink" >list.values()</a>)</p>
+   <p class = "code">{</p>
+   <p class = "tab">//code</p>
+   <p class = "code">}</p>
+ <br>
+    <p class = "norm">Like the 'getSet()' method before, the <a class = "red" onmouseover = "highlight('rhiyaLink')" onmouseout = "unhighlight('rhiyaLink')">'values()'</a> method returns an iterable collection of all the values in the code. </p>
+    <p class = "norm">The hashmap is not really intended for iteration. Instead, it's main purpose is to quickly call a value with a key. This is why iterating through hashmaps is complicated and cumbersome.</p>
+	
+  <a class = "green2" href = "ArrayLists.html" id = "left4"><-----ArrayLists</a>
+   <a class="right" href="ADT.html">Abstract Data Types-----></a>
+ </body>
+</html>

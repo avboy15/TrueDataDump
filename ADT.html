@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <title>DataDump -Abstract Data Type Introduction</title> 
+     <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+	 <script src = "testScript.js"></script>
+
+ </head>
+ <body onload = "transform('540','4420','square36');transform('660','4420','square37');transform('780','4420','square38');transform('540','4575','square39');transform('660','4575','square40');transform('780','4575','square41'); transformLine('605','4440','0','55','0','ADT1');transformLine('725','4440','0','55','0','ADT2');transformLine('613','4608','30','105','60','ADT3'); transformLine('672','4608','-30','105','60','ADT4');transform('-20','20','tab8');transform('0','4766','left5')">
+   <center><h1 class = "round">Abstract Data Type Introduction</h1></center>
+   <br>
+   <p class = "norm">Before we start learning about more complicated data structures such as Binary Search Trees, we must understand what are Abstract Data Types (ADT). Unlike normal, concrete data types, ADTs are basically a chain of objects that reference to each other, called nodes. To understand this concept a bit better, let's look at the code of the class for one of these nodes. Note that the class is shortened to the important parts, in order to avoid unnecessary complications</p>
+<br>
+     <p class = "code"><a id = "rohithLink">Private</a> class <a id = "appleLink">Node</a></p>
+     <p class = "code">{</p>
+     <p class = "tab" id = "iftuLink">Node next;</p>
+	 <p class = "tab" id = "ripaLink">int val;</p>
+	 <p class = "tab"><a id = "arianaLink">Public Node</a>(<a id = "nashiaLink">int num</a>)</p>
+	 <p class = "tab">{</p>
+	 <p class = "doubletab" id = "husneLink">val = num;</p>
+	 <p class = "doubletab" id = "tahiyaLink">next = null;</p>
+	 <p class = "tab">}</p>
+     <p class = "code">}</p>
+<br>
+<p class = "norm">Notice how we made the class <a class = "green" onclick = "holdHighlight('rohithLink')" >private</a> instead of public. This is because the <a class = "green" onclick = "holdHighlight('appleLink')" >Node class</a> is almost always found inside the larger LinkedList class, and it is only really called to inside of that class. We will talk about the LinkedList class in a bit. We could have made the Node class public as well, but there would be no need to do so, since there are no Node calls outside of the LinkedList class. The two instance variables are a <a class = "green" onclick = "holdHighlight('iftuLink')" >Node called next</a> and an <a class = "green" onclick = "holdHighlight('ripaLink')" >int named val</a>. In our <a class = "green" onclick = "holdHighlight('arianaLink')" >constructor</a>, we set <a class = "green" onclick = "holdHighlight('husneLink')" >val</a> equal to an <a class = "green" onclick = "holdHighlight('nashiaLink')" >input num</a> and the <a class = "green" onclick = "holdHighlight('tahiyaLink')" >next Node</a> to be null. The instance variable val represents the value of the node, which the user can initialize when he makes a new Node object, and the next Node is a reference to the node that the current node connects to. Now that we know the Node and it’s programming, we can look at the programming behind the LinkedList class to get a better understanding of how ADTs work. Once again, this is just for learning purposes and not everything is included in this class example.
+</p>
+<br>
+     <p class = "code">Public class LinkedList</p>
+     <p class = "code">{</p>
+     <p class = "tab" id = "khalaLink">Node root;</p>
+	 <p class = "tab"><a id = "khaluLink">Public LinkedList</a>(<a id = "a">int num</a>)</p>
+	 <p class = "tab">{</p>
+	 <p class = "doubletab" id = "thisLink">Root = new Node(num);</p>
+	 <p class = "tab">}</p>
+	 <p class = "tab"><a id = "b">Public void add</a>(int num)</p>	 
+	 <p class = "tab">{</p>
+	 <p class = "doubletab" id = "c">Node curr = root;</p>	
+	 <p class = "doubletab"><a id = "d">while</a>(<a id = "e">curr.next != null</a>)</p>	
+	 <p class = "doubletab">{</p>	 
+	 <p class = "tripletab" id = "f">curr = curr.next;</p>
+	 <p class = "doubletab">}</p>	
+	 <p class = "doubletab" id = "g">curr.next = new Node(num);</p>	
+	 <p class = "tab">}</p>
+	 <p class = "tab"><a id = "h">Public void remove</a>(int index)</p>	 
+	 <p class = "tab">{</p>
+	 <p class = "doubletab">Node curr = root;</p>	
+	 <p class = "doubletab" id = "i">if(index == 0)</p>	
+	 <p class = "doubletab">{</p>	 
+	 <p class = "tripletab" id = "j">root = curr.next;</p>
+	 <p class = "tripletab">return;</p>
+	 <p class = "doubletab">}</p>	
+	 <p class = "doubletab" id = "k">for(int i = 0; i< index-1; i++)</p>	
+	 <p class = "doubletab" id = "k">{</p>
+	 <p class = "tripletab" id = "k">curr = curr.next;</p>
+	 <p class = "doubletab" id = "k">}</p>
+	 <p class = "doubletab" id = "l">if(curr.next.next != null)</p>	
+	 <p class = "doubletab">{</p>	
+	 <p class = "tripletab" id = "m">Node newLink = curr.next.next;</p>	
+	 <p class = "tripletab" id = "n">curr.next = newLink;</p>
+	 <p class = "doubletab">}</p>
+	 <p class = "doubletab">else</p>
+	 <p class = "doubletab">{</p>	
+	 <p class = "tripletab" id = "o">curr.next = null;</p>	
+	 <p class = "doubletab">}</p>
+	 <p class = "tab">}</p>		 	 
+     <p class = "code">}</p>
+<br>
+     <p class = "norm">The instance variable is a <a class = "green" onclick = "holdHighlight('khalaLink')" >root node</a>, which represents the first node in the LinkedList. The <a class = "green" onclick = "holdHighlight('khaluLink')" >LinkedList constructor</a> initializes the <a class = "green" onclick = "holdHighlight('thisLink')" >root node</a> as a node with the value of the <a class = "green" onclick = "holdHighlight('a')" >input num</a>. In the <a class = "green" onclick = "holdHighlight('b')" >add method</a>, we set a new <a class = "green" onclick = "holdHighlight('c')" >Node named curr equal to the root</a>. We do this so that we can iterate through the loop from the start and look for the next null reference to add our new node to. We use a <a class = "green" onclick = "holdHighlight('d')" >while loop</a> for this, and we tell the while loop to keep looping <a class = "green" onclick = "holdHighlight('e')" >as long as there is not a null next reference</a>. In the loop, <a class = "green" onclick = "holdHighlight('f')" >curr is constantly updated to the next node</a>. This allows us to go through every node .Once the loop stops, the <a class = "green" onclick = "holdHighlight('g')" >null next reference is turned into a new node with value nums</a>. The <a class = "green" onclick = "holdHighlight('h')" >remove method</a> is a bit more complicated, since we never technically 'delete' a node. Instead, we just change the reference to a node. To understand this better, check out the following example and follow the code. Once again, we make the curr node to iterate through the LinkedList. Next, <a a class = "green" onclick = "holdHighlight('i')" >if we want to remove the first index in the list</a>, all we have to do is set the <a class = "green" onclick = "holdHighlight('j')" >root to the next Node</a>. Doing this basically ignores the original root of the LinkedList and makes the LinkedList start from the second node, 'deleting the first'. If the index is not the first one, then we make a <a class = "green" onclick = "holdHighlight('k')" >for loop</a> that basically takes us to the node right before the desired deleted index, which as the current curr value. Once we get to this node, we check <a class = "green" onclick = "holdHighlight('l')" >if the node after the desired deleted index (curr.next.next) has a value</a>. If it does, then we make a <a class = "green" onclick = "holdHighlight('m')" >new Node with the value of curr.next.next</a>, and then make <a class = "green" onclick = "holdHighlight('n')" >curr.next equal to this new value</a>. Doing so basically changes the LinkedList in that the deleted Node is replaced with the Node right after it. It is as if the deleted node never existed in the first place. But what if the curr.next.next value was null? Then all we would have to do is <a class = "green" onclick = "holdHighlight('o')" >set curr.next = null</a>, since we wanted to delete the last value in the LinkedList in the first place.
+</p>
+     <p class = "norm">Obviously, LinkedLists are much more intricate and have a lot more methods than add() and remove(). However, now we have a good understanding of Abstract Data types and how they function. With this knowledge, we can discuss more Data Structures, such as Queues, Stacks, and Binary Search Trees. A visualization of LinkedList add and remove method is shown below.
+</p>
+<br>
+<center><p class = "redcode" onmouseover = "highlight('square38')" onmouseout = "unhighlight('square38')">Add(2);</p></center>
+<br>
+<br>
+<div class = "square" id = "square36">0</div>
+<div class = "square" id = "square37">1</div>
+<div class = "square" id = "square38">2</div>
+<br>
+<br>
+<center><p class = "redcode" onmouseover = "highlight('square40')" onmouseout = "unhighlight('square40')">Remove(1);</p></center>
+<div class = "line1" id = "ADT1"></div>
+<div class = "line1" id = "ADT2"></div>
+<div class = "line1" id = "ADT3"></div>
+<div class = "line1" id = "ADT4"></div>
+<br>
+<br>
+<br>
+<br>
+<div class = "square" id = "square39">0</div>
+<div class = "square" id = "square40">1</div>
+<div class = "square" id = "square41">2</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.html">-Home</a>
+  <a href="1DArrays.html">-Single Arrays</a>
+  <a href="2DArrays.html">-Two Dimensional Arrays</a>
+  <a href="ArrayLists.html">-ArrayLists</a>
+  <a href="HashMap.html">-HashMaps</a>
+  <a href="ADT.html">-Abstract Data Type Introduction</a>
+  <a href="Stack.html">-Stacks</a>
+  <a href="Queue.html">-Queue</a>
+  <a href="BST.html">-Binary Search Trees</a>
+</div>
+<span onclick="openNav()" class = "square2" id = "tab8">---></span>
+   <a class = "green2" href = "HashMap.html" id = "left5"><-----HashMaps</a>
+   <a class="right" href="Stack.html">Stacks-----></a>
+ </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <title>DataDump -Queue</title> 
+     <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+	 <script src = "testScript.js"></script>
+
+ </head>
+ <body onload = "transform('535','2420','square42'); transform('595','2420','square43'); transform('655','2420','square44'); transform('570','2610','square45'); transform('630','2610','square46'); transform('-20','20','tab10');transform('0','2710','left7')">
+   <center><h1 class = "round">Queue</h1></center>
+   <br>
+   <p class = "norm">Queues are the opposite of Stacks, but they share a lot of similarities. They are both mutable, and they have similar initializations. The big difference between the queue and the stack is that the queue has a First In First Out (FIFO) iteration instead of the FILO iteration of the stack. A line of cars at a stoplight is a good visualization of a queue. The first car that got there is going to be the first one out once the light turns green. Queues are used in various ways, such as keeping track of orders in fast food restaurants. Their methods are functionally identical to those of the Stack, but some of them have different names, as we will see below.
+   </p>
+   <center><p class = "round2">Initialization</p></center>
+   <p class = "norm">Remember to import java.util </p>
+   <p class = "norm">The initialization for the Queue is once again very similar to that of an ArrayList.</p>
+<br>
+<center><p class = "code"><a id = "s">LinkedList</a> < Object > myQueue = new LinkedList< Object >();
+</p></center>
+<center><p class = "code">LinkedList < Object > myQueue = new LinkedList<>();
+</p></center>
+<br>
+   <p class = "norm">You cannot initialize a Queue with a set number of starting slots because it is an Abstract Data Type.</p>
+   <p class = "norm">You might be wondering why I put <a class = "red" onmouseover = "highlight('s')" onmouseout = "unhighlight('s')">LinkedList</a> instead of Queue. This is because the LinkedList is a type of Queue (a child class of the Queue), and it is the most straightforward one for learning purposes. If we tried to initialize it like this
+</p>
+<br>
+<center><p class = "code"><a id = "t">Queue</a> < Object > myQueue = new Queue< Object >();
+</p></center>
+<br>
+   <p class = "norm">Then we would receive a compilation error from the computer, since the <a class = "red" onmouseover = "highlight('t')" onmouseout = "unhighlight('t')">Queue</a> class is an abstract parent class (abstract classes can't be initialized).</p>
+   <center><p class = "round2">Useful Methods</p></center>
+   <p class = "norm">.add(Object o) - places an object on the end of the queue. 
+</p>
+   <p class = "norm">.peek() - returns the head of the queue, but does not remove it.
+</p>
+   <p class = "norm">.poll()-returns and removes the head of the queue.
+</p>
+   <p class = "norm">.remove()-simply returns head of queue.
+</p>
+   <p class = "norm">more information can be found <a href= "https://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html">here</a>
+</p>
+   <center><p class = "round2">Iteration</p></center>
+   <p class = "norm">Since the Queue is so similar to the Stack, this means that their iteration is roughly the same.
+</p>
+<br>
+   <p class = "code">while(<a id = "u">myQueue.peek()!=null)</a></p>
+   <p class = "code">{</p>
+   <p class = "tab">myQueue.peek();</p>
+   <p class = "tab">//code</p>
+   <p class = "tab">myQueue.pop();</p>
+   <p class = "code">}</p>
+<br>
+   <p class = "norm">The one apparent difference is that instead of myQueue.empty() == false in the while condition, we check if the <a class = "red" onmouseover = "highlight('u')" onmouseout = "unhighlight('u')">myQueue.peek() != null</a>. This tells our while loop to keep working until it sees a null reference, which is basically the same thing as checking if the Queue is empty. We should do this instead of using .empty() because the abstract parent class of Queue does not have an empty() method. However, if you happen to be using a child class of Queue that does have empty(), then you can use empty(). This is a visualization of the Queue.
+</p>
+<br>
+<center><p class = "code">{}</p></center>
+<center><p class = "code">Queue.add(1);</p></center>
+<center><p class = "code">Queue.add(2);</p></center>
+<center><p class = "code">Queue.add(3);</p></center>
+<br>
+<br>
+<div class = "square" id = "square42">1</div>
+<div class = "square" id = "square43">2</div>
+<div class = "square" id = "square44">3</div>   
+<br>
+<br>
+<br>
+<center><p class = "code">Queue.poll()</p></center>
+<br>
+<br>
+<br>
+<div class = "square" id = "square45">2</div>
+<div class = "square" id = "square46">3</div> 
+<br>
+<br>
+<br>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.html">-Home</a>
+  <a href="1DArrays.html">-Single Arrays</a>
+  <a href="2DArrays.html">-Two Dimensional Arrays</a>
+  <a href="ArrayLists.html">-ArrayLists</a>
+  <a href="HashMap.html">-HashMaps</a>
+  <a href="ADT.html">-Abstract Data Type Introduction</a>
+  <a href="Stack.html">-Stacks</a>
+  <a href="Queue.html">-Queue</a>
+  <a href="BST.html">-Binary Search Trees</a>
+</div>
+<span onclick="openNav()" class = "square2" id = "tab10">---></span>
+   <a class = "green2" href = "stack.html" id = "left7"><-----Stack</a>
+   <a class="right" href="BST.html">Binary Search Tree-----></a>
+ </body>
+</html>

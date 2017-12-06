@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <title>DataDump- Single Arrays</title> 
+     <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+     <script src = "testScript.js"></script>
+
+ </head>
+ <body onload = "transform('540','1070','square1');transform('600','1070','square2');transform('660','1070','square3');transform('540','1550','square4');transform('600','1550','square5');transform('660','1550','square6');transform('540','2070','square7');transform('600','2070','square8');transform('660','2070','square9');transform('-20','20','tab4');transform('0','3435','left1')">
+   <center><h1 class = "round">Single Arrays</h1></center>
+   <br>
+   <p class = "norm">Single Arrays are the most basic data structure you can find. These are immutable, meaning that once we initialize a length for them, the size of the array cannot be altered. The number of data we put In cannot exceed the length of the Array. Arrays are the only data type that can hold both primitives (String, int, boolean) and objects. We can initialize arrays in two ways.</p>
+   <center><p class = "round2">Intialization</p></center>
+   <p class = "norm">There is no importation for Arrays</p>
+   <br>
+   <center><p class = "code"><a id = "yujunLink">int</a> <a id = "coolLink">[]</a> <a id = "danLink">exampleArray</a> = <a id = "owLink">{1,2,3,4,5}</a>;</p></center>
+   <center><p class = "norm">Or</p></center>
+   <center><p class = "code">int [] exampleArray = new int{1,2,3,4,5};</p></center>
+   <br>
+   <p class = "norm">The <a class = "red" onmouseover = "highlight('coolLink')" onmouseout = "unhighlight('coolLink')">brackets</a> tell the computer that we are going to make an array, and the <a class = "red" onmouseover = "highlight('yujunLink')" onmouseout = "unhighlight('yujunLink')">'int'</a> right before the brackets tell the computer what type of data we are going to put in the array. The <a class = "red" onmouseover = "highlight('danLink')" onmouseout = "unhighlight('danLink')">name</a> is given right after the brackets. The <a class = "red" onmouseover = "highlight('owLink')" onmouseout = "unhighlight('owLink')">numbers</a> inside the curly brackets are the ints that the array starts out with. We can change these values, which I will show later , but we cannot add anything else to the array. 
+</p>
+   <p class = "norm">We can also intialize an Array like this</p>
+   <br>
+   <center><p class = "code">int [] exampleArray = <a id = "prateekLink">new int[3]</a>;</p></center>
+   <br>
+   <p class = "norm">The noticeable difference here is the <a class = "red" onmouseover = "highlight('prateekLink')" onmouseout = "unhighlight('prateekLink')">'new int[3]'</a>. The “new int []” portion tells the computer to create a new int Array, while the 3 tells the computer to make this Array have 3 spots. When we initialize an Array like this, all of the 3 spots are filled with 0 as place holders. It looks like this.</p>
+   <br>
+   <div class = "square" id = "square1">0</div>
+   <div class = "square" id = "square2">0</div>
+   <div class = "square" id = "square3">0</div>   
+   <br>
+   <br>
+   <br>
+   <p class = "norm">If we wanted to fill these with actual values, say from 1 to 3,this is what we would do .
+</p>
+   <br>
+   <center><p class = "code">exampleArray[0] = 1;</p></center>
+   <center><p class = "code">exampleArray[1] = 2;</p></center>
+   <center><p class = "code">exampleArray[2] = 3;</p></center>
+   <br>
+   <p class = "norm">Now our example array would look like this</p>
+   <br>
+   <div class = "square" id = "square4">1</div>
+   <div class = "square" id = "square5">2</div>
+   <div class = "square" id = "square6">3</div> 
+    <br>
+	<br>
+    <br>
+    <br>
+     <p class = "norm">We could have easily filled this up with a for or while loop as well.
+</p>
+
+     <p class = "norm">As you noticed, the first element in this Array is referenced to as zero instead of one. This rule applies for any data set that uses numbers to iterate. So if you want to call the first element in an Array, use zero instead of one.
+We can also replace values in our Array the same way that we filled it up. Say we wanted to turn the 1 in the Array into a 4. All we would have to do is this.
+</p>
+    <br>
+    <center><p class = "code">exampleArray[0] = 4;
+</p></center>
+    <br>
+     <p class = "norm">Now our Array would look like this</p>
+	 <br>
+	 <div class = "square" id = "square7">4</div>
+     <div class = "square" id = "square8">2</div>
+     <div class = "square" id = "square9">3</div> 
+     <br>
+	 <br>
+     <br>
+	 <br>
+	 <br>
+	 <br>
+   <center><p class = "round2">Useful Methods</p></center>
+   
+   <p class = "norm">.length = returns how many elemens the array can hold</p>
+   
+   <p class = "norm">This is the same as in 2D Arrays</p>
+   
+   <center><p class = "round2">Iteration</p></center>
+   
+   <p class = "norm">Iteration through Arrays is fairly simple. One way to do it is with a traditional for loop, as seen below</p>
+   <br>
+   <p class = "code">for(<a id = "tomLink">int i= 0;</a><a id = "melinaLink">i < exampleArray.length;</a> <a id = "cullenLink" >i++</a>)</p>
+   <p class = "code">{</p>
+   <p class = "tab">//code</p>
+   <p class = "code">}</p>
+   <br>
+    <p class = "norm">We start the <a class = "red" onmouseover = "highlight('tomLink')" onmouseout = "unhighlight('tomLink')">iterator at zero</a> because our first element in the array is indexed at zero, and we make sure that it is less than instead of less than or equal to in the <a class = "red" onmouseover = "highlight('melinaLink')" onmouseout = "unhighlight('melinaLink')">second parameter</a> for the same reason. If it was less than or equal to, then i would be a number that exceeds the carrying capacity of the Array. We do <a class = "red" onmouseover = "highlight('cullenLink')" onmouseout = "unhighlight('cullenLink')">'i++'</a>in the next parameter in order to iterate through each element one by one. </p>
+    
+	<p class = "norm">You can also iterate with a for- each loop, as shown below</p>
+	<br>
+    <p class = "code">for(<a id = "aujinLink">int a</a> : <a id = "zoeLink">exampleArray</a>)</p>
+    <p class = "code">{</p>
+    <p class = "tab">//code</p>
+    <p class = "code">}</p>
+    <br>
+     <p class = "norm">Here, the code <a class = "red" onmouseover = "highlight('zoeLink')" onmouseout = "unhighlight('zoeLink')">looks in every int in exampleArray</a> and references them as multiple <a class = "red"  onmouseover = "highlight('aujinLink')" onmouseout = "unhighlight('aujinLink')">integers called 'a'</a>. You can compare values easier with this method.
+</p>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.html">-Home</a>
+  <a href="1DArrays.html">-Single Arrays</a>
+  <a href="2DArrays.html">-Two Dimensional Arrays</a>
+  <a href="ArrayLists.html">-ArrayLists</a>
+  <a href="HashMap.html">-HashMaps</a>
+  <a href="ADT.html">-Abstract Data Type Introduction</a>
+  <a href="Stack.html">-Stacks</a>
+  <a href="Queue.html">-Queue</a>
+  <a href="BST.html">-Binary Search Trees</a>
+</div>
+<span onclick="openNav()" class = "square2" id = "tab4">---></span>
+   <a class = "green2" href = "home.html" id = "left1"><-----Home</a>  
+   <a class="right" href="2DArrays.html">Two Dimensional Arrays-----></a>
+ </body>
+</html>

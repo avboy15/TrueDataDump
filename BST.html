@@ -1,0 +1,101 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+     <title>DataDump -Binary Search Tree</title> 
+     <link rel = "stylesheet" type = "text/css" href = "testStyle.css">
+	 <script src = "testScript.js"></script>
+
+ </head>
+ <body onload = "transform('735','4080','cir3');transformLine('783','4170','20','300','47','test1');transformLine('488','4170','-20','300','47','test2');transform('480','4240','cir4');transform('980','4240','cir5');transformLine('412','4320','-35','120','47','test3');transformLine('534','4320','35','120','47','test4');transformLine('912','4320','-35','120','47','test5');transformLine('1034','4320','35','120','47','test6');transform('402','4370','cir6');transform('544','4370','cir7');transform('902','4370','cir8');transform('1044','4370','cir9'); transform('-20','20','tab11');transform('0','4586','left8');transform('940','3000','gif1')">
+   <center><h1 class = "round">Binary Search Tree</h1></center>
+   <br>
+   <p class = "norm">The binary search tree(BST) is one of the most simple ADTs to visualize yet one of the most difficult to program. Basically, the BST starts with a 'root' Node that has two instance variables that connect it to two other Nodes. The first Node is the left Node, and it contains an object that is less in value than the root Node. The second Node is the right Node, and it contains an object that is more in value than the root Node. Each of these right and left Nodes have left and right Nodes, and so on. This means that we would find the lowest value at the leftmost end of the tree, and we would find the highest value at the rightmost end of the tree. For non-integer objects, we would use the compareTo() method to see which value is higher and lower.</p>
+   <center><p class = "round2">Initialization</p></center>
+   <p class = "norm">Since there is technically no Binary Search Tree in the Java Collections class (There is TreeMap and TreeSets, but these are functionally similar to HashMaps), I will just show you the Node class in this section. Like the LinkedList class, we would find the Node class for the BST inside the BST class itself.
+ </p>
+<br>
+     <p class = "code">Private class TreeNode</p>
+     <p class = "code">{</p>
+     <p class = "tab" id = "0">TreeNode Left;</p>
+	 <p class = "tab" id = "1">TreeNode Right;</p>
+	 <p class = "tab" id = "2">int Val;</p>
+	 <p class = "tab">Private TreeNode(<a id = "6">int num</a>)</p>
+     <p class = "tab">{</p>
+	 <p class = "doubletab" id = "5">Val = num;</p>
+	 <p class = "doubletab" id = "3">Left = null;</p>
+	 <p class = "doubletab" id = "4">Right = null;</p>
+	 <p class = "tab">}</p>
+     <p class = "code">}</p>
+<br>
+   <p class = "norm">Like I said before, the Node has a <a class = "green" onclick = "holdHighlight('0')">left Node</a>, <a class = "green" onclick = "holdHighlight('1')">right Node</a>, and a <a class = "green" onclick = "holdHighlight('2')">value</a> itself. When we make the Node, the <a class = "green" onclick = "holdHighlight('3')">left</a> and <a class = "green" onclick = "holdHighlight('4')">right</a> Nodes are set to null and the <a class = "green" onclick = "holdHighlight('5')">value</a> is decided by the user via the <a class = "green" onclick = "holdHighlight('6')">parameter</a>. If you are confused about the left and right Nodes, check out <a href = "ADT.html">'Introduction to Abstract Data Types'</a>.</p>
+   <center><p class = "round2">Useful Methods</p></center>
+   <p class = "norm">Since there is no actual BST class implemented in Java, there is no methods for it. However, I will provide a <a href = "http://docs.oracle.com/javase/7/docs/api/java/util/TreeMap.html">link</a> to the TreeMap API, even though it is very similar to the HashMap.</p>
+   <center><p class = "round2">Iteration</p></center>
+   <p class = "norm">Trees are most easily iterated through with a technique called recursive backtracking. This is basically using two methods , one of which is recursive, to do the work of a single method. Let's look at the class and the add method for a BST to see what I am talking about.</p>
+<br>
+     <p class = "code">Public class BST</p>
+     <p class = "code">{</p>
+     <p class = "tab">TreeNode root;</p>
+	 <p class = "tab">Private class TreeNode</p>
+	 <p class = "tab">{</p>
+	 <p class = "doubletab">//code for TreeNode</p>
+	 <p class = "tab">}</p>
+	 <p class = "tab">Public BST(int num)</p>	 
+	 <p class = "tab">{</p>
+	 <p class = "doubletab" id = "7">root = new TreeNode(num);</p>	
+	 <p class = "tab">}</p>
+	 <p class = "tab"><a id = "8">Public void add</a>(<a id = "10">int index</a>)</p>	 
+	 <p class = "tab">{</p>
+	 <p class = "doubletab" id = "11">addHelper(root,num);</p>	
+	 <p class = "tab">}</p>	
+	 <p class = "tab"><a id = "9">Public void addHelper</a>(<a id = "12">TreeNode node, int num</a>)</p>	
+     <p class = "tab">{</p>	
+	 <p class = "doubletab" id = "13">if(node == null)</p>	
+	 <p class = "doubletab">{</p>	
+	 <p class = "tripletab" id = "14">node = new TreeNode(num);</p>
+	 <p class = "doubletab">}</p>	
+	 <p class = "doubletab" id = "15">else if(num < node.val)</p>	
+	 <p class = "doubletab">{</p>	
+	 <p class = "tripletab" id = "16">addHelper(node.left, num);</p>
+	 <p class = "doubletab">}</p>	
+	 <p class = "doubletab" id = "18">else</p>	
+	 <p class = "doubletab">{</p>	
+	 <p class = "tripletab" id = "17">addHelper(node.right, num);</p>	
+	 <p class = "doubletab">}</p>
+	 <p class = "tab">}</p>	
+	 <p class = "code">}</p>	
+<br>
+   <p class = "norm">Once we <a class = "green" onclick = "holdHighlight('7')">initialized the root</a>, we can see two methods, one called <a class = "green" onclick = "holdHighlight('8')">add</a> and the other called <a class = "green" onclick = "holdHighlight('9')">addHelper</a>. In the regular add method, we have the number that we want to add as a <a class = "green" onclick = "holdHighlight('10')">parameter</a>. However, the only code in the add method is a <a class = "green" onclick = "holdHighlight('11')">call to the addHelper method</a>, with its <a class = "green" onclick = "holdHighlight('12')">parameters</a> as the root node and add's parameter. In the addHelper method, we use recursion, meaning we call to the method inside the same method. The first <a class = "green" onclick = "holdHighlight('13')">if statement</a> checks if the node is null, and if it is, then it <a class = "green" onclick = "holdHighlight('14')">changes the null node to a new TreeNode with the num as a value</a>. The <a class = "green" onclick = "holdHighlight('15')">else if statement</a> checks if the num is less than the value of the current node. If so, then it calls to the <a class = "green" onclick = "holdHighlight('16')">addHelper method</a>, except this time, the node parameter is node.left instead of root. The last <a class = "green" onclick = "holdHighlight('18')">else</a> statement does this same thing to the <a class = "green" onclick = "holdHighlight('17')">right node</a>. The recursive calls in this method keep updating the value of the node either to the right or to the left node, depending on the value of nums and the value of the existing nodes in the tree. Once the method encounters a null node, it makes a new node of value num at that null reference. This null reference, determined by the else if and else statements, is the next value in the tree. This is a visualization of a BST.
+</p>
+<br>
+<br>
+<div class = "circle1" id = "cir3">5</div>
+<div class = "line1" id = "test1"></div>
+<div class = "line1" id = "test2"></div>
+<div class = "circle1" id = "cir4">3</div>
+<div class = "circle1" id = "cir5">7</div>
+<div class = "line1" id = "test3"></div>
+<div class = "line1" id = "test4"></div>
+<div class = "line1" id = "test5"></div>
+<div class = "line1" id = "test6"></div>
+<div class = "circle1" id = "cir6">2</div>
+<div class = "circle1" id = "cir7">5</div>
+<div class = "circle1" id = "cir8">6</div>
+<div class = "circle1" id = "cir9">8</div>
+ <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="home.html">-Home</a>
+  <a href="1DArrays.html">-Single Arrays</a>
+  <a href="2DArrays.html">-Two Dimensional Arrays</a>
+  <a href="ArrayLists.html">-ArrayLists</a>
+  <a href="HashMap.html">-HashMaps</a>
+  <a href="ADT.html">-Abstract Data Type Introduction</a>
+  <a href="Stack.html">-Stacks</a>
+  <a href="Queue.html">-Queue</a>
+  <a href="BST.html">-Binary Search Trees</a>
+</div>
+<img id = "gif1" src = "binary-search-tree-insertion-animation.gif">
+<span onclick="openNav()" class = "square2" id = "tab11">---></span>
+   <a class = "green2" href = "Queue.html" id = "left8"><-----Queue</a>
+ </body>
+</html>
